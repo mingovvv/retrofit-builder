@@ -1,0 +1,32 @@
+common:
+  read-timeout: &common-read-timeout 10s
+  write-timeout: &common-write-timeout 10s
+  connection-timeout : &common-connection-timeout 1s
+
+aaa:
+  service:
+    host: localhost
+    port: 8081
+    read-timeout: 20s
+    write-timeout: 20s
+    connection-timeout: 5s
+
+
+bbb:
+  service:
+    host: localhost
+    port: 8082
+    read-timeout: *common-read-timeout
+    write-timeout: *common-write-timeout
+    connection-timeout: *common-connection-timeout
+
+ccc:
+  service:
+    host: localhost
+    port: 8083
+    read-timeout: *common-read-timeout
+    write-timeout: *common-write-timeout
+    connection-timeout: *common-connection-timeout
+
+
+
